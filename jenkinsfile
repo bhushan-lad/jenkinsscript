@@ -28,10 +28,20 @@ pipeline {
                 }
             }
         }
+        stage('test'){
+            steps{
+            echo " test stage"
+            }
+        }
+        stage('acceptance'){
+        steps{
+            input('Do you want to proceed')
+            }
+        }
         stage('deploy'){
 steps{
 echo "Deploy into tomcat"
 }
-    }
+}
 }
 }
